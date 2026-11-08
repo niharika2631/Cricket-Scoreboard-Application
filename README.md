@@ -1,172 +1,144 @@
-\# Cricket Match Scoreboard Application
+# 🏏 Cricket Match Scoreboard Application
 
+## 1. Introduction
 
+The **Cricket Match Scoreboard Application** is a console-based project developed using C++. It is designed to manage and display cricket match scores, including runs, wickets, overs, extras, and match results.
 
-\## 1. Introduction
+The project demonstrates important Object-Oriented Programming (OOP) concepts and provides a simple way to simulate a cricket match.
 
+## 2. Objectives
 
+- To develop a cricket scoreboard using C++.
+- To understand and implement OOP concepts.
+- To calculate runs, wickets, overs, and run rate.
+- To manage two teams and their innings.
+- To display the final match result.
 
-The Cricket Match Scoreboard Application is a console-based C++ project designed to manage and display cricket match scores.
+## 3. Features
 
+- Team creation and player details.
+- Recording batsman runs.
+- Recording wickets.
+- Handling wide balls and no-balls.
+- Recording byes and leg-byes.
+- Automatic over calculation.
+- Run-rate calculation.
+- Two-innings match simulation.
+- Target score calculation.
+- Final match result display.
 
+## 4. OOP Concepts Used
 
-It allows users to record runs, wickets, extras, and overs while displaying the current scoreboard and match results.
+| Concept | Application |
+|---|---|
+| Encapsulation | Data members and member functions in classes |
+| Inheritance | Batsman and Bowler inherit from Player |
+| Abstraction | Abstract Player class |
+| Polymorphism | Virtual functions and function overriding |
+| Classes and Objects | Player, Team, Match, and Scoreboard |
 
+## 5. Technologies Used
 
+- Programming Language: C++
+- Compiler: GCC (g++)
+- IDE/Editor: Visual Studio Code or any C++ editor
+- Version Control: Git
+- Repository Hosting: GitHub
 
-\## 2. Objectives
-
-
-
-\- To develop a cricket scoreboard using C++.
-
-\- To apply Object-Oriented Programming concepts.
-
-\- To calculate team scores and run rates.
-
-\- To manage batting and bowling information.
-
-\- To display match results automatically.
-
-
-
-\## 3. Features
-
-
-
-\- Create two cricket teams.
-
-\- Record runs from 0 to 6.
-
-\- Record wickets.
-
-\- Record wide balls and no-balls.
-
-\- Record byes and leg-byes.
-
-\- Calculate run rate.
-
-\- Manage first and second innings.
-
-\- Display the scoreboard.
-
-\- Display the match result.
-
-
-
-\## 4. Technologies Used
-
-
-
-\- Programming Language: C++
-
-\- Compiler: GCC (g++)
-
-\- IDE / Terminal: Git Bash
-
-\- C++ Standard: C++17
-
-
-
-\## 5. Object-Oriented Programming Concepts
-
-
-
-\### Encapsulation
-
-Data members are declared private and accessed through public methods.
-
-
-
-\### Inheritance
-
-Batsman and Bowler classes inherit from the Player class.
-
-
-
-\### Abstraction
-
-Player is an abstract class containing the pure virtual function `displayStats()`.
-
-
-
-\### Polymorphism
-
-Batsman and Bowler provide their own implementations of `displayStats()`.
-
-
-
-\## 6. Project Structure
-
-
+## 6. Project Structure
 
 ```text
-
-Cricket-Match-Scoreboard/
-
-├── README.md
-
-├── CMakeLists.txt
-
-├── src/
-
+Cricket-Scoreboard-Application/
+│
 ├── include/
-
+│   ├── player.h
+│   ├── batsman.h
+│   ├── bowler.h
+│   ├── team.h
+│   ├── scoreboard.h
+│   ├── extras.h
+│   └── match.h
+│
+├── src/
+│   ├── main.cpp
+│   ├── player.cpp
+│   ├── batsman.cpp
+│   ├── bowler.cpp
+│   ├── team.cpp
+│   ├── scoreboard.cpp
+│   ├── extras.cpp
+│   └── match.cpp
+│
 ├── tests/
-
-└── docs/
-
+│   └── test_scoreboard.cpp
+│
+├── docs/
+│   └── project_documentation.md
+│
+├── PROJECT_CHARTER.md
+├── CMakeLists.txt
+├── README.md
+└── .gitignore
 ```
 
+## 7. Requirements
 
+- C++ compiler (GCC or MinGW).
+- Git (optional, for version control).
+- Windows, Linux, or macOS.
 
-\## 7. Compilation
+## 8. How to Compile and Run
 
+Open Git Bash or a terminal in the project directory.
 
-
-Run the following command from the project directory:
-
-
+Compile the application:
 
 ```bash
-
-g++ -std=c++17 -Wall -Wextra -Iinclude src/main.cpp src/player.cpp src/batsman.cpp src/bowler.cpp src/team.cpp src/scoreboard.cpp src/extras.cpp src/match.cpp -o scoreboard.exe
-
+g++ -std=c++17 src/*.cpp -o cricket_scoreboard.exe
 ```
 
-
-
-\## 8. Execution
-
-
+Run on Windows/Git Bash:
 
 ```bash
-
-./scoreboard.exe
-
+./cricket_scoreboard.exe
 ```
 
+## 9. Testing
 
+The project includes a scoreboard test program with 10 test cases covering:
 
-\## 9. Conclusion
+- Run calculation.
+- Wide and no-ball extras.
+- Bye and leg-bye calculations.
+- Wicket counting.
+- Over calculation.
+- Run-rate calculation.
+- Innings completion.
 
+All 10 test cases passed during testing.
 
+To compile and run the tests:
 
-The Cricket Match Scoreboard Application demonstrates the practical use of C++ and Object-Oriented Programming concepts. It provides a simple way to record cricket scores and manage match innings through a console-based interface.
+```bash
+g++ -std=c++17 tests/test_scoreboard.cpp src/scoreboard.cpp -o test_scoreboard.exe
+./test_scoreboard.exe
+```
 
+## 10. Future Enhancements
 
+- Support complete player statistics.
+- Improve cricket scoring rules.
+- Add ball-by-ball commentary.
+- Store match history in files.
+- Develop a graphical user interface.
+- Support different cricket formats.
 
-\## 10. Future Enhancements
+## 11. Conclusion
 
+The Cricket Match Scoreboard Application demonstrates the practical implementation of C++ and Object-Oriented Programming concepts. It provides basic cricket match scoring functionality and helps develop programming, problem-solving, and software development skills.
 
+## 12. Author
 
-\- Complete individual player statistics.
+**Developed as a C++ Object-Oriented Programming project.**
 
-\- Add player selection and team lineups.
-
-\- Improve cricket scoring rules.
-
-\- Store match details in files.
-
-\- Add a graphical user interface.
-
+GitHub Repository: https://github.com/niharika2631/Cricket-Scoreboard-Application
