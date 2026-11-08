@@ -1,0 +1,19 @@
+
+# Executable files
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Build directories
+build/
+cmake-build-*/
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
