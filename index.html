@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Scoreboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eaf2f8;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .box {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        .score {
+            background: darkgreen;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background: green;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🏏 Cricket Scoreboard</h1>
+
+    <h2>Team India vs Team Australia</h2>
+
+    <div class="score">
+        <h2 id="score">0 / 0</h2>
+        <h3>Overs: <span id="overs">0.0</span></h3>
+        <h3>Run Rate: <span id="rate">0.00</span></h3>
+    </div>
+
+    <h3>Add Runs</h3>
+
+    <button onclick="addRuns(1)">1</button>
+    <button onclick="addRuns(2)">2</button>
+    <button onclick="addRuns(3)">3</button>
+    <button onclick="addRuns(4)">4</button>
+    <button onclick="addRuns(6)">6</button>
+
+    <h3>Other Actions</h3>
+
+    <button onclick="addWide()">Wide</button>
+    <button onclick="addWicket()">Wicket</button>
+
+    <br><br>
+
+    <button onclick="resetScore()">Reset</button>
+
+</div>
+
+<script>
+let runs = 0;
+let wickets = 0;
+let balls = 0;
+
+function updateScore() {
+    document.getElementById("score").innerText =
+        runs + " / " + wickets;
+
+    document.getElementById("overs").innerText =
+        Math.floor(balls / 6) + "." + (balls % 6);
+
+    let rate = balls === 0 ? 0 : runs / (balls / 6);
+
+    document.getElementById("rate").innerText =
+        rate.toFixed(2);
+}
+
+function addRuns(value) {
+    if (wickets >= 10 || balls >= 120) return;
+
+    runs += value;
+    balls++;
+
+    updateScore();
+}
+
+function addWide() {
+    if (wickets >= 10 || balls >= 120) return;
+
+    runs++;
+    updateScore();
+}
+
+function addWicket() {
+    if (wickets >= 10 || balls >= 120) return;
+
+    wickets++;
+    balls++;
+
+    updateScore();
+}
+
+function resetScore() {
+    runs = 0;
+    wickets = 0;
+    balls = 0;
+
+    updateScore();
+}
+</script>
+
+</body>
+</html>
